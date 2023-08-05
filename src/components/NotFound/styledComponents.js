@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 export const NotFoundContainer = styled.div`
-  background-color: ${props => (props.isThemeLight ? '#ffffff' : '#000000')};
+  background-color: ${props => (props.isThemeLight ? '#f9f9f9' : '#000000')};
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
   text-align:center;
   font-family:'Roboto'
-  min-height: 100vh;
+  height: 100vh;
 `
 export const NotFoundHeading = styled.h1`
-  color: ${props => (props.theme ? '#181818' : '#ffffff')};
+  color: ${props => (props.theme ? '#181818' : '#f9f9f9')};
   font-size: 20px;
   @media screen and (min-width: 768px) {
     font-size: 32px;

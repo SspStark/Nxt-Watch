@@ -1,4 +1,5 @@
 import NxtWatchContext from '../../context/NxtWatchContext'
+import Header from '../Header'
 
 import {
   NotFoundContainer,
@@ -17,13 +18,18 @@ const NotFound = () => (
         : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-not-found-dark-theme-img.png'
 
       return (
-        <NotFoundContainer isThemeLight>
-          <NotFoundImage src={notFoundImage} />
-          <NotFoundHeading isThemeLight>Page Not Found</NotFoundHeading>
-          <NotFoundDescription isThemeLight>
-            We are sorry, the page you requested could not be found.
-          </NotFoundDescription>
-        </NotFoundContainer>
+        <>
+          <Header />
+          <NotFoundContainer theme={isThemeLight}>
+            <NotFoundImage src={notFoundImage} alt="not found" />
+            <NotFoundHeading theme={isThemeLight}>
+              Page Not Found
+            </NotFoundHeading>
+            <NotFoundDescription theme={isThemeLight}>
+              We are sorry, the page you requested could not be found.
+            </NotFoundDescription>
+          </NotFoundContainer>
+        </>
       )
     }}
   </NxtWatchContext.Consumer>
