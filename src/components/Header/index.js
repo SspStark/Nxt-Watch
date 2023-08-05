@@ -38,7 +38,7 @@ const Header = props => (
                 {isThemeLight ? (
                   <BsMoon color="black" size={25} />
                 ) : (
-                  <BsSun color="white" />
+                  <BsSun color="white" size={25} />
                 )}
               </ChangeTheme>
               <MenuButton theme={isThemeLight}>
