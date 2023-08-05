@@ -9,9 +9,11 @@ import {
   NavContent,
   NavLink,
   NavLogo,
-  MobileOptions,
+  NavOptions,
   ChangeTheme,
-  MenuButton,
+  MenuIcon,
+  LogoutIcon,
+  ProfileImage,
   LogoutButton,
 } from './styledComponents'
 
@@ -33,21 +35,26 @@ const Header = props => (
                 alt="website logo"
               />
             </NavLink>
-            <MobileOptions>
-              <ChangeTheme onClick={() => toggleTheme()}>
+            <NavOptions>
+              <ChangeTheme onClick={() => toggleTheme()} type="button">
                 {isThemeLight ? (
                   <BsMoon color="black" size={25} />
                 ) : (
                   <BsSun color="white" size={25} />
                 )}
               </ChangeTheme>
-              <MenuButton theme={isThemeLight}>
+              <MenuIcon theme={isThemeLight}>
                 <GiHamburgerMenu size={25} />
-              </MenuButton>
-              <LogoutButton theme={isThemeLight}>
+              </MenuIcon>
+              <LogoutIcon theme={isThemeLight} type="button">
                 <FiLogOut size={25} />
-              </LogoutButton>
-            </MobileOptions>
+              </LogoutIcon>
+              <ProfileImage
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
+                alt="profile"
+              />
+              <LogoutButton type="button">Logout</LogoutButton>
+            </NavOptions>
           </NavContent>
         </Navbar>
       )

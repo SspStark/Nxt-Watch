@@ -1,14 +1,18 @@
 import styled from 'styled-components'
 
-export const NotFoundContainer = styled.div`
+export const NotFoundRoute = styled.div`
   background-color: ${props => (props.isThemeLight ? '#f9f9f9' : '#000000')};
+  height: 90vh;
+`
+
+export const NotFoundContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
   text-align:center;
   font-family:'Roboto'
-  height: 100vh;
+  height: 100%;
 `
 export const NotFoundHeading = styled.h1`
   color: ${props => (props.theme ? '#181818' : '#f9f9f9')};

@@ -2,6 +2,7 @@ import NxtWatchContext from '../../context/NxtWatchContext'
 import Header from '../Header'
 
 import {
+  NotFoundRoute,
   NotFoundContainer,
   NotFoundImage,
   NotFoundHeading,
@@ -20,15 +21,17 @@ const NotFound = () => (
       return (
         <>
           <Header />
-          <NotFoundContainer theme={isThemeLight}>
-            <NotFoundImage src={notFoundImage} alt="not found" />
-            <NotFoundHeading theme={isThemeLight}>
-              Page Not Found
-            </NotFoundHeading>
-            <NotFoundDescription theme={isThemeLight}>
-              We are sorry, the page you requested could not be found.
-            </NotFoundDescription>
-          </NotFoundContainer>
+          <NotFoundRoute theme={isThemeLight}>
+            <NotFoundContainer>
+              <NotFoundImage src={notFoundImage} alt="not found" />
+              <NotFoundHeading theme={isThemeLight}>
+                Page Not Found
+              </NotFoundHeading>
+              <NotFoundDescription theme={isThemeLight}>
+                We are sorry, the page you requested could not be found.
+              </NotFoundDescription>
+            </NotFoundContainer>
+          </NotFoundRoute>
         </>
       )
     }}
