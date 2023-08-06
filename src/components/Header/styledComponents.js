@@ -5,6 +5,8 @@ export const Navbar = styled.nav`
   background-color: ${props => (props.theme ? 'white' : '#212121')};
   display: flex;
   justify-content: center;
+  width: 100%;
+  position: fixed;
 `
 export const NavContent = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const NotFoundRoute = styled.div`
-  background-color: ${props => (props.isThemeLight ? '#f9f9f9' : '#000000')};
+  background-color: ${props => (props.isThemeLight ? '#f9f9f9' : '#181818')};
   height: 90vh;
 `
 

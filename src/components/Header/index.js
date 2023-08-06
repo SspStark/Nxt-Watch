@@ -1,3 +1,6 @@
+import {withRouter} from 'react-router-dom'
+import Cookies from 'js-cookie'
+
 import {BsMoon, BsSun} from 'react-icons/bs'
 import {FiLogOut} from 'react-icons/fi'
 import {GiHamburgerMenu} from 'react-icons/gi'
@@ -22,6 +25,12 @@ const Header = props => (
     {value => {
       const {isThemeLight, toggleTheme} = value
 
+      const logOut = () => {
+        const {history} = props
+        Cookies.remove('jwt_token')
+        history.replace('/login')
+      }
+
       return (
         <Navbar theme={isThemeLight}>
           <NavContent>
@@ -36,7 +45,11 @@ const Header = props => (
               />
             </NavLink>
             <NavOptions>
-              <ChangeTheme onClick={() => toggleTheme()} type="button">
+              <ChangeTheme
+                onClick={() => toggleTheme()}
+                type="button"
+                data-testid="theme"
+              >
                 {isThemeLight ? (
                   <BsMoon color="black" size={25} />
                 ) : (
@@ -46,14 +59,16 @@ const Header = props => (
               <MenuIcon theme={isThemeLight}>
                 <GiHamburgerMenu size={25} />
               </MenuIcon>
-              <LogoutIcon theme={isThemeLight} type="button">
+              <LogoutIcon theme={isThemeLight} type="button" onClick={logOut}>
                 <FiLogOut size={25} />
               </LogoutIcon>
               <ProfileImage
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
                 alt="profile"
               />
-              <LogoutButton type="button">Logout</LogoutButton>
+              <LogoutButton type="button" onClick={logOut}>
+                Logout
+              </LogoutButton>
             </NavOptions>
           </NavContent>
         </Navbar>
@@ -62,4 +77,4 @@ const Header = props => (
   </NxtWatchContext.Consumer>
 )
 
-export default Header
+export default withRouter(Header)
