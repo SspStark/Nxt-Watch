@@ -7,7 +7,7 @@ export const NavSidebar = styled.nav`
   justify-content: space-between;
   background-color: white;
   position: fixed;
-  width: 220px;
+  width: 250px;
   height: 90%;
   font-family: 'Roboto';
 `
