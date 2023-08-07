@@ -7,9 +7,10 @@ export const HomePage = styled.div`
   min-height: 100vh;
   width: 100%;
   font-family: 'Roboto';
+  background-color: #f9f9f9;
 `
 export const BannerContainer = styled.div`
-  display: flex;
+  display: ${props => (props.display ? 'flex' : 'none')};
   justify-content: space-between;
   padding: 30px;
   background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png ');
@@ -56,11 +57,10 @@ export const BannerClose = styled.button`
     margin-right: 200px;
   }
 `
-export const HomeVideosContainer = styled.div`
+export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #f9f9f9;
 `
 export const SearchContainer = styled.div`
   display: flex;
@@ -90,4 +90,10 @@ export const SearchButton = styled.button`
   width: 60px;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
+`
+export const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 `
