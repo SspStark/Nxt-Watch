@@ -11,8 +11,6 @@ import {
 const FailureView = props => {
   const {retry} = props
 
-  const onClickRetry = () => retry()
-
   return (
     <NxtWatchContext.Consumer>
       {value => {
@@ -28,7 +26,7 @@ const FailureView = props => {
               We are having some trouble to complete your request. <br /> Please
               try again later.
             </FailureNote>
-            <RetryButton type="button" onClick={onClickRetry}>
+            <RetryButton type="button" onClick={() => retry()}>
               Retry
             </RetryButton>
           </FailureViewContainer>

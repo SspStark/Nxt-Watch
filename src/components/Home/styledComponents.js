@@ -67,18 +67,18 @@ export const SearchContainer = styled.div`
   align-items: center;
   height: 35px;
   width: 40%;
-  border: 1px solid #cccccc;
+  border: 1px solid #1e293b;
   border-radius: 5px;
   margin-bottom: 24px;
 `
 export const SearchInput = styled.input`
   height: 100%;
   background-color: transparent;
-  color: #383838;
+  color: #000000;
   font-size: 14px;
   border: none;
   padding-left: 16px;
-  flex: 1;
+  width: 85%;
   outline: none;
 `
 export const SearchButton = styled.button`
@@ -87,7 +87,7 @@ export const SearchButton = styled.button`
   outline: none;
   cursor: pointer;
   height: 100%;
-  width: 60px;
+  width: 15%;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 `
@@ -96,4 +96,45 @@ export const LoaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 50vh;
+`
+export const NoResults = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`
+export const NoResultsImage = styled.img`
+  width: 350px;
+`
+export const NoResultsHeading = styled.h1`
+  color: #1e293b;
+  font-size: 22px;
+  font-weight: 500;
+`
+export const NoResultsNote = styled.p`
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+`
+export const RetryButton = styled.button`
+  background-color: #3b82f6;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+`
+export const VideosContainer = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding-left: 0px;
 `

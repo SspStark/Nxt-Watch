@@ -1,10 +1,12 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
+import Cookies from 'js-cookie'
 import {AiOutlineClose} from 'react-icons/ai'
 import {BsSearch} from 'react-icons/bs'
 
 import NxtWatchContext from '../../context/NxtWatchContext'
 import FailureView from '../FailureView'
+import HomeVideos from '../HomeVideos'
 
 import {
   HomePage,
@@ -19,6 +21,12 @@ import {
   SearchInput,
   SearchButton,
   LoaderContainer,
+  NoResults,
+  NoResultsImage,
+  NoResultsHeading,
+  NoResultsNote,
+  RetryButton,
+  VideosContainer,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -33,11 +41,77 @@ class Home extends Component {
     showBanner: true,
     searchInput: '',
     apiStatus: apiStatusConstants.initial,
+    videosList: [],
   }
+
+  componentDidMount() {
+    this.getVideosList()
+  }
+
+  getVideosList = async () => {
+    this.setState({apiStatus: apiStatusConstants.inProgress})
+    const {searchInput} = this.state
+    const jwtToken = Cookies.get('jwt_token')
+    const url = `https://apis.ccbp.in/videos/all?search=${searchInput}`
+    const options = {
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+      method: 'GET',
+    }
+    const response = await fetch(url, options)
+    if (response.ok) {
+      const data = await response.json()
+      const formattedData = data.videos.map(eachVideo => ({
+        id: eachVideo.id,
+        title: eachVideo.title,
+        thumbnailUrl: eachVideo.thumbnail_url,
+        channelName: eachVideo.channel.name,
+        profileImageUrl: eachVideo.channel.profile_image_url,
+        viewCount: eachVideo.view_count,
+        publishedAt: eachVideo.published_at,
+      }))
+      this.setState({
+        videosList: formattedData,
+        apiStatus: apiStatusConstants.success,
+      })
+    } else {
+      this.setState({apiStatus: apiStatusConstants.failure})
+    }
+  }
+
+  searchVideos = () => this.getVideosList()
 
   closeBanner = () => this.setState({showBanner: false})
 
   getSearchInput = event => this.setState({searchInput: event.target.value})
+
+  retry = () => this.getVideosList()
+
+  renderVideosView = () => {
+    const {videosList} = this.state
+    return videosList.length === 0 ? (
+      <NoResults>
+        <NoResultsImage
+          src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
+          alt="no videos"
+        />
+        <NoResultsHeading>No Search Results Found</NoResultsHeading>
+        <NoResultsNote>
+          Try different key words or remove search filter
+        </NoResultsNote>
+        <RetryButton type="button" onClick={this.retry}>
+          Retry
+        </RetryButton>
+      </NoResults>
+    ) : (
+      <VideosContainer>
+        {videosList.map(eachVideo => (
+          <HomeVideos videoDetails={eachVideo} key={eachVideo.id} />
+        ))}
+      </VideosContainer>
+    )
+  }
 
   renderFailureView = () => <FailureView retry={this.retry} />
 
@@ -99,11 +173,15 @@ class Home extends Component {
                     value={searchInput}
                     onChange={this.getSearchInput}
                   />
-                  <SearchButton type="button" data-testid="searchButton">
+                  <SearchButton
+                    type="button"
+                    data-testid="searchButton"
+                    onClick={this.searchVideos}
+                  >
                     <BsSearch size={12} />
                   </SearchButton>
                 </SearchContainer>
-                {this.renderFailureView()}
+                {this.renderVideosList()}
               </HomeContainer>
             </HomePage>
           )
