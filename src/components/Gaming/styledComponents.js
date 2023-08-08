@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
-export const TrendingPage = styled.div`
+export const GamingPage = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 250px;
@@ -11,13 +11,13 @@ export const TrendingPage = styled.div`
   background-color: ${props => (props.theme === true ? '#f9f9f9' : '#0f0f0f')};
 `
 
-export const TrendingHeadingCard = styled.div`
+export const GamingHeadingCard = styled.div`
   display: flex;
   align-items: center;
   padding: 12px 40px;
   background-color: ${props => (props.theme === true ? '#f1f1f1' : '#181818')};
 `
-export const TrendingIconBg = styled.div`
+export const GamingIconBg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,53 +26,44 @@ export const TrendingIconBg = styled.div`
   height: 70px;
   border-radius: 70px;
 `
-export const TrendingHeading = styled.h1`
+export const GamingHeading = styled.h1`
   color: ${props => (props.theme === true ? '#181818' : '#f1f1f1')};
   font-size: 25px;
   margin-left: 10px;
 `
-export const VideosContainer = styled.ul`
+export const GamesContainer = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   list-style-type: none;
   padding: 25px 45px;
 `
-export const VideoLink = styled(Link)`
+export const GameLink = styled(Link)`
   text-decoration: none;
 `
-export const VideoItem = styled.li`
-  display: flex;
-  width: 100%;
-  margin-bottom: 50px;
-`
-export const VideoImage = styled.img`
-  width: 300px;
-`
-export const VideoDetails = styled.div`
+export const GameItem = styled.li`
   display: flex;
   flex-direction: column;
-  margin-left: 16px;
+  width: 31%;
+  margin-bottom: 50px;
 `
+export const GameImage = styled.img`
+  width: 100%;
+`
+
 export const Title = styled.p`
   color: ${props => (props.theme === true ? '#000000' : '#ffffff')};
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: 7px;
+  margin-bottom: 0;
 `
-export const ChannelName = styled.p`
+
+export const ViewCount = styled.p`
   color: #64748b;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  margin: 0;
-`
-export const ViewCountPublished = styled(ChannelName)`
-  margin-top: 8px;
-`
-export const Dot = styled.span`
-  font-weight: 800;
-  margin: 0px 5px;
+  margin-top: 5px;
 `
 
 export const LoaderContainer = styled.div`

@@ -118,7 +118,7 @@ class Home extends Component {
           const {showBanner, searchInput} = this.state
 
           return (
-            <HomePage data-testid="Home" theme={isThemeLight}>
+            <HomePage data-testid="home" theme={isThemeLight}>
               <BannerContainer data-testid="banner" showBanner={showBanner}>
                 <BannerDetails>
                   <BannerLogo
