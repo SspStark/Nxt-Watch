@@ -11,12 +11,12 @@ export const FailureImage = styled.img`
   width: 350px;
 `
 export const FailureHeading = styled.h1`
-  color: #1e293b;
   font-size: 22px;
   font-weight: 500;
+  color: ${props => (props.theme === true ? '#0f0f0f' : '#f9f9f9')};
 `
 export const FailureNote = styled.p`
-  color: #64748b;
+  color: ${props => (props.theme === true ? ' #606060' : ' #cccccc')};
   font-size: 15px;
   font-weight: 500;
   line-height: 1.6;

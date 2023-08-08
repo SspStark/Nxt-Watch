@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
 export const Navbar = styled.nav`
-  background-color: ${props => (props.theme ? 'white' : '#212121')};
+  background-color: ${props => (props.theme === true ? 'white' : '#231f20')};
   display: flex;
   justify-content: center;
   width: 100%;
@@ -53,7 +53,7 @@ export const ChangeTheme = styled.button`
   }
 `
 export const MenuIcon = styled(ChangeTheme)`
-  color: ${props => (props.theme ? 'black' : 'white')};
+  color: ${props => (props.theme === true ? 'black' : 'white')};
   @media (min-width: 768px) {
     display: none;
   }
@@ -70,9 +70,9 @@ export const ProfileImage = styled.img`
   }
 `
 export const LogoutButton = styled(ChangeTheme)`
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
+  color: ${props => (props.theme === true ? '#3b82f6' : '#f9f9f9')};
   border-radius: 4px;
+  border: 1px solid ${props => (props.theme === true ? '#3b82f6' : '#f9f9f9')};
   padding: 5px 18px;
   font-family: 'Roboto';
   font-size: 14px;
@@ -80,4 +80,43 @@ export const LogoutButton = styled(ChangeTheme)`
   @media (max-width: 767px) {
     display: none;
   }
+`
+export const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  width: 250px;
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 20px;
+`
+export const ModalNote = styled.p`
+  font-size: 18px;
+  margin: 10px;
+  color: #f1f1f1;
+  text-align: center;
+`
+export const ModalButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`
+export const CloseButton = styled.button`
+  background-color: transparent;
+  border: 1px solid #94a3b8;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  margin: 0px 8px;
+  padding: 8px 16px;
+`
+
+export const ConfirmButton = styled(CloseButton)`
+  background-color: #3b82f6;
+  color: #f1f1f1;
+  border: none;
 `

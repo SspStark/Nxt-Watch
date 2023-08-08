@@ -10,6 +10,7 @@ export const NavSidebar = styled.nav`
   width: 250px;
   height: 90%;
   font-family: 'Roboto';
+  background-color: ${props => (props.theme === true ? 'white' : '#231f20')};
 `
 export const SidebarOptions = styled.ul`
   display: flex;
@@ -35,6 +36,7 @@ export const OptionName = styled.p`
   font-weight: 500;
   margin: 0;
   margin-left: 16px;
+  color: ${props => props.textColor};
 `
 export const ContactSection = styled.div`
   display: flex;
@@ -45,6 +47,7 @@ export const ContactSection = styled.div`
 export const ContactHeading = styled.p`
   font-size: 16px;
   font-weight: 500;
+  color: ${props => (props.theme === true ? ' #1e293b' : ' #f1f5f9')};
 `
 export const ContactLogos = styled.div`
   display: flex;
@@ -60,4 +63,5 @@ export const ContactsCaption = styled.p`
   font-size: 14px;
   font-weight: 500;
   width: 200px;
+  color: ${props => (props.theme === true ? ' #1e293b' : ' #f1f5f9')};
 `

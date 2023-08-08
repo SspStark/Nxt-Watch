@@ -23,48 +23,84 @@ const Sidebar = () => (
     {value => {
       const {isThemeLight, activePage, changeActivePage} = value
 
+      const activePageColor = isThemeLight ? '#e2e8f0' : '#424242'
+      const activeOptionColor = isThemeLight ? '#000000' : '#ffffff'
+      const optionColor = isThemeLight ? '#64748b' : '#e2e8f0'
+
       return (
-        <NavSidebar>
+        <NavSidebar theme={isThemeLight}>
           <SidebarOptions>
-            <MenuLink>
+            <MenuLink to="/">
               <MenuItem
-                bgColor={activePage === 'Home' ? '#e2e8f0' : 'none'}
+                bgColor={activePage === 'Home' ? activePageColor : 'none'}
                 onClick={() => changeActivePage('Home')}
               >
-                <AiFillHome />
-                <OptionName>Home</OptionName>
+                <AiFillHome
+                  color={activePage === 'Home' ? '#ff0000' : '#64748b'}
+                />
+                <OptionName
+                  textColor={
+                    activePage === 'Home' ? activeOptionColor : optionColor
+                  }
+                >
+                  Home
+                </OptionName>
               </MenuItem>
             </MenuLink>
-            <MenuLink>
+            <MenuLink to="/trending">
               <MenuItem
-                bgColor={activePage === 'Trending' ? ' #cbd5e1' : 'none'}
+                bgColor={activePage === 'Trending' ? activePageColor : 'none'}
                 onClick={() => changeActivePage('Trending')}
               >
-                <HiFire />
-                <OptionName>Trending</OptionName>
+                <HiFire
+                  color={activePage === 'Trending' ? '#ff0000' : '#64748b'}
+                />
+                <OptionName
+                  textColor={
+                    activePage === 'Trending' ? activeOptionColor : optionColor
+                  }
+                >
+                  Trending
+                </OptionName>
               </MenuItem>
             </MenuLink>
-            <MenuLink>
+            <MenuLink to="/gaming">
               <MenuItem
-                bgColor={activePage === 'Gaming' ? ' #cbd5e1' : 'none'}
+                bgColor={activePage === 'Gaming' ? activePageColor : 'none'}
                 onClick={() => changeActivePage('Gaming')}
               >
-                <SiYoutubegaming />
-                <OptionName>Gaming</OptionName>
+                <SiYoutubegaming
+                  color={activePage === 'Gaming' ? '#ff0000' : '#64748b'}
+                />
+                <OptionName
+                  textColor={
+                    activePage === 'Gaming' ? activeOptionColor : optionColor
+                  }
+                >
+                  Gaming
+                </OptionName>
               </MenuItem>
             </MenuLink>
-            <MenuLink>
+            <MenuLink to="/saved-videos">
               <MenuItem
-                bgColor={activePage === 'Saved' ? ' #cbd5e1' : 'none'}
+                bgColor={activePage === 'Saved' ? activePageColor : 'none'}
                 onClick={() => changeActivePage('Saved')}
               >
-                <MdPlaylistAdd />
-                <OptionName>Saved Videos</OptionName>
+                <MdPlaylistAdd
+                  color={activePage === 'Saved' ? '#ff0000' : '#64748b'}
+                />
+                <OptionName
+                  textColor={
+                    activePage === 'Saved' ? activeOptionColor : optionColor
+                  }
+                >
+                  Saved Videos
+                </OptionName>
               </MenuItem>
             </MenuLink>
           </SidebarOptions>
           <ContactSection>
-            <ContactHeading>CONTACT US</ContactHeading>
+            <ContactHeading theme={isThemeLight}>CONTACT US</ContactHeading>
             <ContactLogos>
               <Contact
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png"
@@ -79,7 +115,7 @@ const Sidebar = () => (
                 alt="linked in logo"
               />
             </ContactLogos>
-            <ContactsCaption>
+            <ContactsCaption theme={isThemeLight}>
               Enjoy! Now to see your channels and recommendations!
             </ContactsCaption>
           </ContactSection>

@@ -72,8 +72,8 @@ class Login extends Component {
           const {isThemeLight} = value
 
           return (
-            <LoginPage>
-              <LoginForm onSubmit={this.submitForm}>
+            <LoginPage theme={isThemeLight}>
+              <LoginForm onSubmit={this.submitForm} theme={isThemeLight}>
                 <FormLogo
                   src={
                     isThemeLight
@@ -83,23 +83,29 @@ class Login extends Component {
                   alt="website logo"
                 />
                 <InputContainer>
-                  <Label htmlFor="username">USERNAME</Label>
+                  <Label htmlFor="username" theme={isThemeLight}>
+                    USERNAME
+                  </Label>
                   <Input
                     id="username"
                     type="text"
                     placeholder="Username"
                     value={username}
                     onChange={this.getUsername}
+                    theme={isThemeLight}
                   />
                 </InputContainer>
                 <InputContainer>
-                  <Label htmlFor="password">PASSWORD</Label>
+                  <Label htmlFor="password" theme={isThemeLight}>
+                    PASSWORD
+                  </Label>
                   <Input
                     id="password"
                     type={showOrHidePassword}
                     placeholder="Password"
                     value={password}
                     onChange={this.getPassword}
+                    theme={isThemeLight}
                   />
                 </InputContainer>
                 <CheckBoxContainer>
@@ -110,7 +116,7 @@ class Login extends Component {
                     onChange={this.togglePassword}
                   />
 
-                  <CheckBoxLabel htmlFor="checkbox">
+                  <CheckBoxLabel htmlFor="checkbox" theme={isThemeLight}>
                     Show Password
                   </CheckBoxLabel>
                 </CheckBoxContainer>

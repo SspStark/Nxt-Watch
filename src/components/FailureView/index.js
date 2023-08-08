@@ -21,8 +21,10 @@ const FailureView = props => {
         return (
           <FailureViewContainer>
             <FailureImage src={FailureImageUrl} alt="failure view" />
-            <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-            <FailureNote>
+            <FailureHeading theme={isThemeLight}>
+              Oops! Something Went Wrong
+            </FailureHeading>
+            <FailureNote theme={isThemeLight}>
               We are having some trouble to complete your request. <br /> Please
               try again later.
             </FailureNote>

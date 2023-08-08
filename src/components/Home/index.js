@@ -6,7 +6,7 @@ import {BsSearch} from 'react-icons/bs'
 
 import NxtWatchContext from '../../context/NxtWatchContext'
 import FailureView from '../FailureView'
-import HomeVideos from '../HomeVideos'
+import HomeVideosView from '../HomeVideosView'
 
 import {
   HomePage,
@@ -21,12 +21,6 @@ import {
   SearchInput,
   SearchButton,
   LoaderContainer,
-  NoResults,
-  NoResultsImage,
-  NoResultsHeading,
-  NoResultsNote,
-  RetryButton,
-  VideosContainer,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -90,27 +84,7 @@ class Home extends Component {
 
   renderVideosView = () => {
     const {videosList} = this.state
-    return videosList.length === 0 ? (
-      <NoResults>
-        <NoResultsImage
-          src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
-          alt="no videos"
-        />
-        <NoResultsHeading>No Search Results Found</NoResultsHeading>
-        <NoResultsNote>
-          Try different key words or remove search filter
-        </NoResultsNote>
-        <RetryButton type="button" onClick={this.retry}>
-          Retry
-        </RetryButton>
-      </NoResults>
-    ) : (
-      <VideosContainer>
-        {videosList.map(eachVideo => (
-          <HomeVideos videoDetails={eachVideo} key={eachVideo.id} />
-        ))}
-      </VideosContainer>
-    )
+    return <HomeVideosView videosList={videosList} retry={this.retry} />
   }
 
   renderFailureView = () => <FailureView retry={this.retry} />
@@ -144,8 +118,8 @@ class Home extends Component {
           const {showBanner, searchInput} = this.state
 
           return (
-            <HomePage data-testid="Home">
-              <BannerContainer data-testid="banner" display={showBanner}>
+            <HomePage data-testid="Home" theme={isThemeLight}>
+              <BannerContainer data-testid="banner" showBanner={showBanner}>
                 <BannerDetails>
                   <BannerLogo
                     src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
@@ -166,17 +140,19 @@ class Home extends Component {
                 </BannerClose>
               </BannerContainer>
               <HomeContainer>
-                <SearchContainer>
+                <SearchContainer theme={isThemeLight}>
                   <SearchInput
                     type="search"
                     placeholder="Search"
                     value={searchInput}
                     onChange={this.getSearchInput}
+                    theme={isThemeLight}
                   />
                   <SearchButton
                     type="button"
                     data-testid="searchButton"
                     onClick={this.searchVideos}
+                    theme={isThemeLight}
                   >
                     <BsSearch size={12} />
                   </SearchButton>

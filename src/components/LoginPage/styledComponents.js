@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 export const LoginPage = styled.div`
-  background-color: white;
+  background-color: ${props => (props.theme === true ? 'white' : '#212121')};
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 `
 export const LoginForm = styled.form`
+  background-color: ${props => (props.theme === true ? 'white' : '#000000')};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +16,9 @@ export const LoginForm = styled.form`
   max-width: 350px;
   padding: 35px 16px;
   font-family: 'Roboto';
-  box-shadow: 0px 0px 20px 5px #e2e8f0;
+  border-radius: 8px;
+  box-shadow: ${props =>
+    props.theme === true ? '0px 0px 20px 5px #e2e8f0' : 'none'};
   @media (min-width: 768px) {
     padding: 40px;
     max-width: 400px;
@@ -36,18 +39,18 @@ export const InputContainer = styled.div`
   margin-top: 25px;
 `
 export const Label = styled.label`
-  color: #64748b;
+  color: ${props => (props.theme === true ? '#64748b' : '#e2e8f0')};
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 5px;
 `
 export const Input = styled.input`
   font-size: 15px;
   height: 36px;
   background-color: transparent;
-  color: #475569;
-  border: 1px solid #cbd5e1;
+  color: ${props => (props.theme === true ? '#475569' : '#e2e8f0')};
   border-radius: 4px;
+  border: 1px solid ${props => (props.theme === true ? '#cbd5e1' : '#606060')};
   outline: none;
   padding-left: 14px;
 `
@@ -64,9 +67,8 @@ export const CheckBox = styled.input`
   margin-right: 6px;
 `
 export const CheckBoxLabel = styled.label`
-  color: black;
+  color: ${props => (props.theme === true ? 'black' : ' #e2e8f0')};
   font-size: 14px;
-  font-weight: 500;
 `
 
 export const LoginButton = styled.button`
