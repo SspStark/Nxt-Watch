@@ -6,6 +6,7 @@ import {HiFire} from 'react-icons/hi'
 
 import NxtWatchContext from '../../context/NxtWatchContext'
 import FailureView from '../FailureView'
+import TrendingVideos from '../TrendingVideos'
 
 import {
   TrendingPage,
@@ -14,14 +15,6 @@ import {
   TrendingHeading,
   LoaderContainer,
   VideosContainer,
-  VideoItem,
-  VideoLink,
-  VideoImage,
-  VideoDetails,
-  Title,
-  ChannelName,
-  ViewCountPublished,
-  Dot,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -89,33 +82,9 @@ class Trending extends Component {
               <TrendingHeading theme={isThemeLight}>Trending</TrendingHeading>
             </TrendingHeadingCard>
             <VideosContainer>
-              {trendingVideos.map(eachVideo => {
-                const {
-                  id,
-                  title,
-                  thumbnailUrl,
-                  channelName,
-                  viewCount,
-                  publishedAt,
-                } = eachVideo
-
-                return (
-                  <VideoLink to={`/videos/${id}`} key={id}>
-                    <VideoItem>
-                      <VideoImage src={thumbnailUrl} alt="video thumbnail" />
-                      <VideoDetails>
-                        <Title theme={isThemeLight}>{title}</Title>
-                        <ChannelName>{channelName}</ChannelName>
-                        <ViewCountPublished>
-                          {viewCount} views
-                          <Dot> &#8226; </Dot>
-                          {publishedAt}
-                        </ViewCountPublished>
-                      </VideoDetails>
-                    </VideoItem>
-                  </VideoLink>
-                )
-              })}
+              {trendingVideos.map(eachVideo => (
+                <TrendingVideos videoDetails={eachVideo} key={eachVideo.id} />
+              ))}
             </VideosContainer>
           </>
         )

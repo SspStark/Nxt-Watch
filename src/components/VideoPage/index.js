@@ -4,7 +4,7 @@ import Cookies from 'js-cookie'
 import ReactPlayer from 'react-player'
 
 import {MdPlaylistAdd} from 'react-icons/md'
-import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai'
+import {AiFillLike, AiFillDislike} from 'react-icons/ai'
 
 import NxtWatchContext from '../../context/NxtWatchContext'
 import FailureView from '../FailureView'
@@ -137,7 +137,7 @@ class VideoPage extends Component {
                   onClick={this.like}
                   color={isLiked ? '#3b82f6' : '#64748b'}
                 >
-                  <AiOutlineLike size={22} />
+                  <AiFillLike size={22} />
                   <ButtonText>Like</ButtonText>
                 </LikeButton>
                 <DislikeButton
@@ -145,7 +145,7 @@ class VideoPage extends Component {
                   onClick={this.dislike}
                   color={isDisliked ? '#3b82f6' : '#64748b'}
                 >
-                  <AiOutlineDislike size={22} />
+                  <AiFillDislike size={22} />
                   <ButtonText>Dislike</ButtonText>
                 </DislikeButton>
                 <SaveButton
