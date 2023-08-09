@@ -5,6 +5,8 @@ const NxtWatchContext = React.createContext({
   toggleTheme: () => {},
   activePage: 'Home',
   changeActivePage: () => {},
+  savedVideos: [],
+  toggleSave: () => {},
 })
 
 export default NxtWatchContext

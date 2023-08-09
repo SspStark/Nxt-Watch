@@ -1,3 +1,4 @@
+import {formatDistanceToNow} from 'date-fns'
 import NxtWatchContext from '../../context/NxtWatchContext'
 
 import {
@@ -53,7 +54,6 @@ const HomeVideosView = props => (
               viewCount,
               publishedAt,
             } = eachVideo
-
             return (
               <VideoItem key={id}>
                 <VideoLink to={`/videos/${id}`}>
