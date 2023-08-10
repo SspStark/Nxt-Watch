@@ -105,7 +105,7 @@ class Trending extends Component {
 
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.renderVideosView()
+        return this.renderTrendingVideos()
       case apiStatusConstants.failure:
         return this.renderFailureView()
       case apiStatusConstants.inProgress:
@@ -123,7 +123,7 @@ class Trending extends Component {
 
           return (
             <TrendingPage data-testid="trending" theme={isThemeLight}>
-              {this.renderTrendingVideos()}
+              {this.renderVideosList()}
             </TrendingPage>
           )
         }}

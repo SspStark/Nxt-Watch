@@ -135,7 +135,7 @@ class VideoPage extends Component {
                 <LikeButton
                   type="button"
                   onClick={this.like}
-                  color={isLiked ? '#3b82f6' : '#64748b'}
+                  color={isLiked ? '#2563eb ' : '#64748b'}
                 >
                   <AiFillLike size={22} />
                   <ButtonText>Like</ButtonText>
@@ -143,14 +143,14 @@ class VideoPage extends Component {
                 <DislikeButton
                   type="button"
                   onClick={this.dislike}
-                  color={isDisliked ? '#3b82f6' : '#64748b'}
+                  color={isDisliked ? '#2563eb ' : '#64748b'}
                 >
                   <AiFillDislike size={22} />
                   <ButtonText>Dislike</ButtonText>
                 </DislikeButton>
                 <SaveButton
                   type="button"
-                  color={videoSaved ? '#3b82f6' : '#64748b'}
+                  color={videoSaved ? '#2563eb' : '#64748b'}
                   onClick={onClickSave}
                 >
                   <MdPlaylistAdd size={22} />
@@ -185,7 +185,7 @@ class VideoPage extends Component {
 
   renderLoadingView = () => (
     <LoaderContainer data-testid="loader">
-      <Loader type="Bars" color="#4f46e5" height="50" width="50" />
+      <Loader type="Oval" color="red" height="40" width="40" />
     </LoaderContainer>
   )
 
@@ -214,7 +214,7 @@ class VideoPage extends Component {
               data-testid="videoItemDetails"
               theme={isThemeLight}
             >
-              {this.renderVideoItem()}
+              {this.renderVideoItemDetails()}
             </VideoItemDetails>
           )
         }}

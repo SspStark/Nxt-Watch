@@ -86,15 +86,15 @@ export const ModalContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 150px;
-  width: 250px;
-  background-color: #212121;
+  width: 300px;
+  background-color: ${props => (props.theme === true ? 'white' : '#212121')};
   border-radius: 10px;
   padding: 20px;
 `
 export const ModalNote = styled.p`
-  font-size: 18px;
-  margin: 10px;
-  color: #f1f1f1;
+  font-size: 15px;
+  font-weight: 500;
+  color: ${props => (props.theme === true ? '#00306e' : '#f1f1f1')};
   text-align: center;
 `
 export const ModalButtons = styled.div`
