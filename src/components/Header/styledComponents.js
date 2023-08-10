@@ -7,6 +7,10 @@ export const Navbar = styled.nav`
   justify-content: center;
   width: 100%;
   position: fixed;
+  height: 73px;
+  @media (max-width: 767px) {
+    height: 60px;
+  }
 `
 export const NavContent = styled.div`
   display: flex;
@@ -90,12 +94,18 @@ export const ModalContainer = styled.div`
   background-color: ${props => (props.theme === true ? 'white' : '#212121')};
   border-radius: 10px;
   padding: 20px;
+  @media (max-width: 400px) {
+    width: 270px;
+  }
 `
 export const ModalNote = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: ${props => (props.theme === true ? '#00306e' : '#f1f1f1')};
   text-align: center;
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
 `
 export const ModalButtons = styled.div`
   display: flex;

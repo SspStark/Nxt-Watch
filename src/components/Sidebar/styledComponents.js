@@ -11,6 +11,9 @@ export const NavSidebar = styled.nav`
   height: 90%;
   font-family: 'Roboto';
   background-color: ${props => (props.theme === true ? 'white' : '#231f20')};
+  @media (max-width: 767px) {
+    display: none;
+  }
 `
 export const SidebarOptions = styled.ul`
   display: flex;

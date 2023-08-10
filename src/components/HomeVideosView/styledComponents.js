@@ -10,11 +10,17 @@ export const NoResults = styled.div`
 `
 export const NoResultsImage = styled.img`
   width: 350px;
+  @media (max-width: 576px) {
+    width: 90%;
+  }
 `
 export const NoResultsHeading = styled.h1`
   font-size: 22px;
   font-weight: 500;
   color: ${props => (props.theme === true ? '#0f0f0f' : '#f9f9f9')};
+  @media (max-width: 576px) {
+    font-size: 18px;
+  }
 `
 export const NoResultsNote = styled.p`
   font-size: 15px;
@@ -28,7 +34,7 @@ export const RetryButton = styled.button`
   font-size: 12px;
   font-weight: 500;
   color: white;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -41,6 +47,10 @@ export const VideosContainer = styled.ul`
   justify-content: space-between;
   list-style-type: none;
   padding-left: 0px;
+  @media (max-width: 576px) {
+    width: 95%;
+    align-self: center;
+  }
 `
 export const VideoLink = styled(Link)`
   text-decoration: none;
@@ -50,6 +60,14 @@ export const VideoItem = styled.li`
   flex-direction: column;
   width: 32%;
   margin-bottom: 50px;
+  @media (max-width: 767px) {
+    width: 48%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    align-self: center;
+    margin-bottom: 35px;
+  }
 `
 export const VideoImage = styled.img`
   width: 100%;
@@ -70,6 +88,7 @@ export const TextContainer = styled.div`
 export const Title = styled.p`
   color: ${props => (props.theme === true ? '#000000' : '#ffffff')};
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 7px;

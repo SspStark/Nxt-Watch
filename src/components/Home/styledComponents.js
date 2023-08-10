@@ -8,6 +8,9 @@ export const HomePage = styled.div`
   width: 100%;
   font-family: 'Roboto';
   background-color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
+  @media (max-width: 767px) {
+    margin-left: 0px;
+  }
 `
 export const BannerContainer = styled.div`
   display: ${props => (props.showBanner === true ? 'flex' : 'none')};
@@ -17,17 +20,30 @@ export const BannerContainer = styled.div`
   width: 100%;
   height: 230px;
   background-size: cover;
+  @media (max-width: 767px) {
+    height: 180px;
+    padding: 20px;
+  }
 `
 export const BannerDetails = styled.div`
   width: 50%;
+  @media (max-width: 767px) {
+    width: 70%;
+  }
 `
 export const BannerLogo = styled.img`
   width: 130px;
+  @media (max-width: 767px) {
+    width: 100px;
+  }
 `
 export const BannerText = styled.p`
   font-size: 18px;
   font-weight: 500;
   color: #424242;
+  @media (max-width: 767px) {
+    font-size: 15px;
+  }
 `
 export const BannerButton = styled.button`
   font-size: 13px;
@@ -39,6 +55,10 @@ export const BannerButton = styled.button`
   outline: none;
   cursor: pointer;
   margin-top: 20px;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    margin-top: 12px;
+  }
 `
 export const BannerClose = styled.button`
   padding: 0;
@@ -56,11 +76,19 @@ export const BannerClose = styled.button`
   @media (min-width: 1290px) {
     margin-right: 200px;
   }
+  @media (max-width: 767px) {
+    width: 14px;
+    margin-right: 0px;
+  }
 `
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  @media (max-width: 576px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 `
 export const SearchContainer = styled.div`
   display: flex;
@@ -70,6 +98,13 @@ export const SearchContainer = styled.div`
   border: 1px solid ${props => (props.theme === true ? '#1e293b' : '#64748b')};
   border-radius: 5px;
   margin-bottom: 24px;
+  @media (max-width: 1140px) {
+    width: 65%;
+  }
+  @media (max-width: 576px) {
+    width: 92%;
+    align-self: center;
+  }
 `
 export const SearchInput = styled.input`
   height: 100%;

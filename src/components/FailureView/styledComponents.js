@@ -9,11 +9,17 @@ export const FailureViewContainer = styled.div`
 `
 export const FailureImage = styled.img`
   width: 350px;
+  @media (max-width: 576px) {
+    width: 90%;
+  }
 `
 export const FailureHeading = styled.h1`
   font-size: 22px;
   font-weight: 500;
   color: ${props => (props.theme === true ? '#0f0f0f' : '#f9f9f9')};
+  @media (max-width: 576px) {
+    font-size: 18px;
+  }
 `
 export const FailureNote = styled.p`
   color: ${props => (props.theme === true ? ' #606060' : ' #cccccc')};
@@ -27,7 +33,7 @@ export const RetryButton = styled.button`
   font-size: 12px;
   font-weight: 500;
   color: white;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 4px;
   border: none;
   outline: none;

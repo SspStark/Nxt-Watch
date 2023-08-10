@@ -5,10 +5,13 @@ import {
   VideoLink,
   VideoImage,
   VideoDetails,
+  ChannelLogo,
+  TextContainer,
   Title,
   ChannelName,
   ViewCountPublished,
   Dot,
+  MobileView,
 } from './styledComponents'
 
 const TrendingVideos = props => (
@@ -23,6 +26,7 @@ const TrendingVideos = props => (
         channelName,
         viewCount,
         publishedAt,
+        profileImageUrl,
       } = videoDetails
 
       return (
@@ -30,13 +34,20 @@ const TrendingVideos = props => (
           <VideoItem>
             <VideoImage src={thumbnailUrl} alt="video thumbnail" />
             <VideoDetails>
-              <Title theme={isThemeLight}>{title}</Title>
-              <ChannelName>{channelName}</ChannelName>
-              <ViewCountPublished>
-                {viewCount} views
-                <Dot> &#8226; </Dot>
-                {publishedAt}
-              </ViewCountPublished>
+              <ChannelLogo src={profileImageUrl} alt="channel logo" />
+              <TextContainer>
+                <Title theme={isThemeLight}>{title}</Title>
+                <ChannelName>{channelName}</ChannelName>
+                <ViewCountPublished>
+                  {viewCount} views
+                  <Dot> &#8226; </Dot>
+                  {publishedAt}
+                </ViewCountPublished>
+                <MobileView>
+                  {channelName} <Dot> &#8226; </Dot> {viewCount} views{' '}
+                  <Dot> &#8226; </Dot> {publishedAt}
+                </MobileView>
+              </TextContainer>
             </VideoDetails>
           </VideoItem>
         </VideoLink>

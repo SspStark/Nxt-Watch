@@ -26,7 +26,7 @@ export const LoginForm = styled.form`
 `
 export const FormLogo = styled.img`
   width: 120px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   @media (min-width: 768px) {
     width: 150px;
     margin-bottom: 25px;

@@ -76,8 +76,10 @@ const Header = props => (
                 className="popup-content"
               >
                 {close => (
-                  <ModalContainer>
-                    <ModalNote>Are you sure, you want to logout?</ModalNote>
+                  <ModalContainer theme={isThemeLight}>
+                    <ModalNote theme={isThemeLight}>
+                      Are you sure, you want to logout?
+                    </ModalNote>
                     <ModalButtons>
                       <CloseButton
                         type="button"
