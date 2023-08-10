@@ -130,3 +130,47 @@ export const ConfirmButton = styled(CloseButton)`
   color: #f1f1f1;
   border: none;
 `
+export const SidebarOptions = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 0px;
+`
+export const MenuLink = styled(Link)`
+  text-decoration: none;
+`
+export const MenuItem = styled.li`
+  display: flex;
+  align-items: center;
+  background-color: ${props => props.bgColor};
+  padding-left: 16px;
+  height: 36px;
+`
+
+export const OptionName = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 16px;
+  color: ${props => props.textColor};
+`
+export const TabsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${props => (props.theme === true ? 'white' : '#212121')};
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  @media (max-width: 400px) {
+    width: 270px;
+  }
+`
+export const TabsClose = styled.button`
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  align-self: flex-end;
+`

@@ -13,6 +13,7 @@ import {
   LoaderContainer,
   VideoItemDetails,
   VideoPlayer,
+  PlayerContainer,
   Title,
   VideoStats,
   ViewsAndDate,
@@ -118,12 +119,14 @@ class VideoPage extends Component {
 
         return (
           <VideoPlayer>
-            <ReactPlayer
-              url={videoData.videoUrl}
-              controls
-              width="100%"
-              height="600px"
-            />
+            <PlayerContainer>
+              <ReactPlayer
+                url={videoData.videoUrl}
+                controls
+                width="100%"
+                height="100%"
+              />
+            </PlayerContainer>
             <Title theme={isThemeLight}>{videoData.title}</Title>
             <VideoStats>
               <ViewsAndDate>
@@ -168,11 +171,11 @@ class VideoPage extends Component {
                 <ChannelSubscribers theme={isThemeLight}>
                   {videoData.subscriberCount} Subscribers
                 </ChannelSubscribers>
-                <ChannelDescription theme={isThemeLight}>
-                  {videoData.description}
-                </ChannelDescription>
               </TextContainer>
             </VideoDetails>
+            <ChannelDescription theme={isThemeLight}>
+              {videoData.description}
+            </ChannelDescription>
           </VideoPlayer>
         )
       }}

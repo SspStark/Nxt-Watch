@@ -15,23 +15,47 @@ export const VideoItemDetails = styled.div`
   width: 100%;
   font-family: 'Roboto';
   background-color: ${props => (props.theme === true ? '#f9f9f9' : '#0f0f0f')};
+  @media (max-width: 767px) {
+    margin-left: 0px;
+  }
 `
 export const VideoPlayer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 20px;
+  @media (max-width: 767px) {
+    padding: 20px 0px;
+  }
 `
+export const PlayerContainer = styled.div`
+  height: 600px;
+  @media (max-width: 912px) {
+    height: 380px;
+  }
+  @media (max-width: 450px) {
+    height: 200px;
+  }
+`
+
 export const Title = styled.p`
   color: ${props => (props.theme === true ? '#000000' : '#ffffff')};
   font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
+  @media (max-width: 576px) {
+    margin-left: 10px;
+  }
 `
 export const VideoStats = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+  }
 `
 export const ViewsAndDate = styled.p`
   color: #64748b;
@@ -46,13 +70,17 @@ export const Dot = styled.span`
 export const LikeAndSave = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 576px) {
+    margin-top: 12px;
+  }
 `
 export const LikeButton = styled.button`
   display: flex;
   align-items: center;
   background-color: transparent;
   color: ${props => props.color};
-  margin-left: 12px;
+  padding: 0;
+  margin-right: 20px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -62,6 +90,7 @@ export const DislikeButton = styled(LikeButton)`
 `
 export const SaveButton = styled(LikeButton)`
   color: ${props => props.color};
+  margin-right: 0px;
 `
 export const ButtonText = styled.p`
   font-size: 12px;
@@ -74,6 +103,9 @@ export const HrLine = styled.hr`
 export const VideoDetails = styled.div`
   display: flex;
   margin-top: 10px;
+  @media (max-width: 576px) {
+    margin-left: 10px;
+  }
 `
 export const ChannelLogo = styled.img`
   width: 40px;
@@ -97,7 +129,11 @@ export const ChannelSubscribers = styled.p`
 `
 export const ChannelDescription = styled.p`
   color: ${props => (props.theme === true ? '#475569' : '#ffffff')};
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 16px;
+  margin-left: 50px;
+  @media (max-width: 576px) {
+    margin-left: 10px;
+  }
 `
