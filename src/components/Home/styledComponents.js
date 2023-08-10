@@ -13,10 +13,10 @@ export const HomePage = styled.div`
   }
 `
 export const BannerContainer = styled.div`
-  display: ${props => (props.showBanner === true ? 'flex' : 'none')};
+  display: ${props => props.displayBan};
   justify-content: space-between;
   padding: 30px;
-  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png ');
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
   width: 100%;
   height: 230px;
   background-size: cover;
@@ -27,9 +27,6 @@ export const BannerContainer = styled.div`
 `
 export const BannerDetails = styled.div`
   width: 50%;
-  @media (max-width: 767px) {
-    width: 70%;
-  }
 `
 export const BannerLogo = styled.img`
   width: 130px;
@@ -60,26 +57,15 @@ export const BannerButton = styled.button`
     margin-top: 12px;
   }
 `
+export const BannerCloseButton = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+
 export const BannerClose = styled.button`
-  padding: 0;
-  background-color: transparent;
   border: none;
-  outline: none;
-  cursor: pointer;
-  align-self: flex-start;
-  @media (min-width: 1130px) {
-    width: 80px;
-  }
-  @media (min-width: 1230px) {
-    margin-right: 100px;
-  }
-  @media (min-width: 1290px) {
-    margin-right: 200px;
-  }
-  @media (max-width: 767px) {
-    width: 14px;
-    margin-right: 0px;
-  }
+  background: none;
+  height: 25px;
 `
 export const HomeContainer = styled.div`
   display: flex;

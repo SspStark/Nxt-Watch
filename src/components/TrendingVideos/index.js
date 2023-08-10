@@ -11,7 +11,6 @@ import {
   ChannelName,
   ViewCountPublished,
   Dot,
-  MobileView,
 } from './styledComponents'
 
 const TrendingVideos = props => (
@@ -43,10 +42,6 @@ const TrendingVideos = props => (
                   <Dot> &#8226; </Dot>
                   {publishedAt}
                 </ViewCountPublished>
-                <MobileView>
-                  {channelName} <Dot> &#8226; </Dot> {viewCount} views{' '}
-                  <Dot> &#8226; </Dot> {publishedAt}
-                </MobileView>
               </TextContainer>
             </VideoDetails>
           </VideoItem>

@@ -21,6 +21,7 @@ import {
   SearchInput,
   SearchButton,
   LoaderContainer,
+  BannerCloseButton,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -32,7 +33,7 @@ const apiStatusConstants = {
 
 class Home extends Component {
   state = {
-    showBanner: true,
+    showBanner: 'flex',
     searchInput: '',
     apiStatus: apiStatusConstants.initial,
     videosList: [],
@@ -76,7 +77,7 @@ class Home extends Component {
 
   searchVideos = () => this.getVideosList()
 
-  closeBanner = () => this.setState({showBanner: false})
+  closeBanner = () => this.setState({showBanner: 'none'})
 
   getSearchInput = event => this.setState({searchInput: event.target.value})
 
@@ -116,28 +117,26 @@ class Home extends Component {
         {value => {
           const {isThemeLight} = value
           const {showBanner, searchInput} = this.state
-
+          const display = showBanner
           return (
             <HomePage data-testid="home" theme={isThemeLight}>
-              <BannerContainer data-testid="banner" showBanner={showBanner}>
+              <BannerContainer data-testid="banner" displayBan={display}>
                 <BannerDetails>
                   <BannerLogo
                     src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
                     alt="nxt watch logo"
                   />
                   <BannerText>
-                    Buy Nxt Watch Premium prepaid plans with UPI
+                    Buy Nxt Watch Premium prepaid plans with
+                    <br /> UPI
                   </BannerText>
                   <BannerButton type="button">GET IT NOW</BannerButton>
                 </BannerDetails>
-
-                <BannerClose
-                  type="button"
-                  data-testid="close"
-                  onClick={this.closeBanner}
-                >
-                  <AiOutlineClose size={16} />
-                </BannerClose>
+                <BannerCloseButton>
+                  <BannerClose data-testid="close" onClick={this.closeBanner}>
+                    <AiOutlineClose size={25} />
+                  </BannerClose>
+                </BannerCloseButton>
               </BannerContainer>
               <HomeContainer>
                 <SearchContainer theme={isThemeLight}>

@@ -4,7 +4,7 @@ import Cookies from 'js-cookie'
 import ReactPlayer from 'react-player'
 
 import {MdPlaylistAdd} from 'react-icons/md'
-import {AiFillLike, AiFillDislike} from 'react-icons/ai'
+import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai'
 
 import NxtWatchContext from '../../context/NxtWatchContext'
 import FailureView from '../FailureView'
@@ -19,9 +19,7 @@ import {
   ViewsAndDate,
   Dot,
   LikeAndSave,
-  LikeButton,
-  DislikeButton,
-  SaveButton,
+  Button,
   ButtonText,
   HrLine,
   VideoDetails,
@@ -30,6 +28,7 @@ import {
   ChannelName,
   ChannelSubscribers,
   ChannelDescription,
+  ButtonCard,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -107,6 +106,9 @@ class VideoPage extends Component {
 
         const onClickSave = () => toggleSave(videoData)
 
+        const colorLiked = isLiked ? '#2563eb' : '#64748b'
+        const colorDisliked = isDisliked ? '#2563eb' : '#64748b'
+
         let videoSaved = false
 
         const findVideo = savedVideos.findIndex(
@@ -116,6 +118,8 @@ class VideoPage extends Component {
         if (findVideo !== -1) {
           videoSaved = true
         }
+
+        const colorSaved = videoSaved ? '#2563eb' : '#64748b'
 
         return (
           <VideoPlayer>
@@ -135,30 +139,36 @@ class VideoPage extends Component {
                 {videoData.publishedAt}
               </ViewsAndDate>
               <LikeAndSave>
-                <LikeButton
-                  type="button"
-                  onClick={this.like}
-                  color={isLiked ? '#2563eb ' : '#64748b'}
-                >
-                  <AiFillLike size={22} />
-                  <ButtonText>Like</ButtonText>
-                </LikeButton>
-                <DislikeButton
-                  type="button"
-                  onClick={this.dislike}
-                  color={isDisliked ? '#2563eb ' : '#64748b'}
-                >
-                  <AiFillDislike size={22} />
-                  <ButtonText>Dislike</ButtonText>
-                </DislikeButton>
-                <SaveButton
-                  type="button"
-                  color={videoSaved ? '#2563eb' : '#64748b'}
-                  onClick={onClickSave}
-                >
-                  <MdPlaylistAdd size={22} />
-                  <ButtonText>{videoSaved ? 'Saved' : 'Save'}</ButtonText>
-                </SaveButton>
+                <ButtonCard>
+                  <Button
+                    type="button"
+                    onClick={this.like}
+                    textColor={colorLiked}
+                  >
+                    <AiOutlineLike size={25} />
+                    <ButtonText>Like</ButtonText>
+                  </Button>
+                </ButtonCard>
+                <ButtonCard>
+                  <Button
+                    type="button"
+                    onClick={this.dislike}
+                    textColor={colorDisliked}
+                  >
+                    <AiOutlineDislike size={22} />
+                    <ButtonText>Dislike</ButtonText>
+                  </Button>
+                </ButtonCard>
+                <ButtonCard>
+                  <Button
+                    type="button"
+                    textColor={colorSaved}
+                    onClick={onClickSave}
+                  >
+                    <MdPlaylistAdd size={22} />
+                    <ButtonText>{videoSaved ? 'Saved' : 'Save'}</ButtonText>
+                  </Button>
+                </ButtonCard>
               </LikeAndSave>
             </VideoStats>
             <HrLine />

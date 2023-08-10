@@ -51,11 +51,6 @@ export const VideoStats = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 576px) {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 10px;
-  }
 `
 export const ViewsAndDate = styled.p`
   color: #64748b;
@@ -70,28 +65,20 @@ export const Dot = styled.span`
 export const LikeAndSave = styled.div`
   display: flex;
   align-items: center;
-  @media (max-width: 576px) {
-    margin-top: 12px;
-  }
 `
-export const LikeButton = styled.button`
+export const Button = styled.button`
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: transparent;
-  color: ${props => props.color};
+  color: ${props => props.textColor};
   padding: 0;
   margin-right: 20px;
   border: none;
   outline: none;
   cursor: pointer;
 `
-export const DislikeButton = styled(LikeButton)`
-  color: ${props => props.color};
-`
-export const SaveButton = styled(LikeButton)`
-  color: ${props => props.color};
-  margin-right: 0px;
-`
+
 export const ButtonText = styled.p`
   font-size: 12px;
   margin-left: 5px;
@@ -136,4 +123,8 @@ export const ChannelDescription = styled.p`
   @media (max-width: 576px) {
     margin-left: 10px;
   }
+`
+export const ButtonCard = styled.div`
+  display: flex;
+  background: none;
 `

@@ -74,7 +74,7 @@ export const CheckBoxLabel = styled.label`
 export const LoginButton = styled.button`
   font-size: 14px;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
   background-color: #3b82f6;
   width: 100%;
   height: 36px;
