@@ -146,7 +146,7 @@ class VideoPage extends Component {
                     textColor={colorLiked}
                   >
                     <AiOutlineLike size={25} />
-                    <ButtonText>Like</ButtonText>
+                    Like
                   </Button>
                 </ButtonCard>
                 <ButtonCard>
@@ -156,7 +156,7 @@ class VideoPage extends Component {
                     textColor={colorDisliked}
                   >
                     <AiOutlineDislike size={22} />
-                    <ButtonText>Dislike</ButtonText>
+                    Dislike
                   </Button>
                 </ButtonCard>
                 <ButtonCard>
