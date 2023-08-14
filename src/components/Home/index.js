@@ -33,7 +33,7 @@ const apiStatusConstants = {
 
 class Home extends Component {
   state = {
-    showBanner: 'flex',
+    showBanner: true,
     searchInput: '',
     apiStatus: apiStatusConstants.initial,
     videosList: [],
@@ -77,7 +77,7 @@ class Home extends Component {
 
   searchVideos = () => this.getVideosList()
 
-  closeBanner = () => this.setState({showBanner: 'none'})
+  closeBanner = () => this.setState({showBanner: false})
 
   getSearchInput = event => this.setState({searchInput: event.target.value})
 
@@ -117,26 +117,31 @@ class Home extends Component {
         {value => {
           const {isThemeLight} = value
           const {showBanner, searchInput} = this.state
-          const display = showBanner
           return (
             <HomePage data-testid="home" theme={isThemeLight}>
-              <BannerContainer data-testid="banner" displayBan={display}>
-                <BannerDetails>
-                  <BannerLogo
-                    src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-                    alt="nxt watch logo"
-                  />
-                  <BannerText>
-                    Buy Nxt Watch Premium prepaid plans with UPI
-                  </BannerText>
-                  <BannerButton type="button">GET IT NOW</BannerButton>
-                </BannerDetails>
-                <BannerCloseButton>
-                  <BannerClose data-testid="close" onClick={this.closeBanner}>
-                    <AiOutlineClose size={25} />
-                  </BannerClose>
-                </BannerCloseButton>
-              </BannerContainer>
+              {showBanner && (
+                <BannerContainer data-testid="banner">
+                  <BannerDetails>
+                    <BannerLogo
+                      src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                      alt="nxt watch logo"
+                    />
+                    <BannerText>
+                      Buy Nxt Watch Premium prepaid plans with UPI
+                    </BannerText>
+                    <BannerButton type="button">GET IT NOW</BannerButton>
+                  </BannerDetails>
+                  <BannerCloseButton>
+                    <BannerClose
+                      type="button"
+                      data-testid="close"
+                      onClick={this.closeBanner}
+                    >
+                      <AiOutlineClose size={25} />
+                    </BannerClose>
+                  </BannerCloseButton>
+                </BannerContainer>
+              )}
               <HomeContainer>
                 <SearchContainer theme={isThemeLight}>
                   <SearchInput

@@ -13,7 +13,7 @@ export const HomePage = styled.div`
   }
 `
 export const BannerContainer = styled.div`
-  display: ${props => props.displayBan};
+  display: flex;
   justify-content: space-between;
   padding: 30px;
   background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
