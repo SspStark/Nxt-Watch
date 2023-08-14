@@ -51,6 +51,11 @@ export const VideoStats = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+  }
 `
 export const ViewsAndDate = styled.p`
   color: #64748b;
@@ -65,6 +70,9 @@ export const Dot = styled.span`
 export const LikeAndSave = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 576px) {
+    margin-top: 10px;
+  }
 `
 export const Button = styled.button`
   display: flex;
