@@ -18,6 +18,7 @@ import {
   ChannelName,
   ViewCountPublished,
   Dot,
+  MobileView,
 } from './styledComponents'
 
 const HomeVideosView = props => (
@@ -72,6 +73,13 @@ const HomeVideosView = props => (
                         <Dot> &#8226; </Dot>
                         {publishedDate} ago
                       </ViewCountPublished>
+                      <MobileView>
+                        {channelName}
+                        <Dot> &#8226; </Dot>
+                        {viewCount} views
+                        <Dot> &#8226; </Dot>
+                        {publishedDate} ago
+                      </MobileView>
                     </TextContainer>
                   </VideoDetails>
                 </VideoLink>

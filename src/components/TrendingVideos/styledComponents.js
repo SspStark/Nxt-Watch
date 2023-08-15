@@ -32,6 +32,7 @@ export const VideoDetails = styled.div`
 export const ChannelLogo = styled.img`
   width: 30px;
   align-self: flex-start;
+  margin-left: 10px;
   @media (min-width: 577px) {
     display: none;
   }
@@ -60,15 +61,24 @@ export const ChannelName = styled.p`
   font-size: 13px;
   font-weight: 500;
   margin: 0;
+  @media (max-width: 576px) {
+    display: none;
+  }
 `
-export const ViewCountPublished = styled.p`
-  color: #64748b;
-  font-size: 13px;
-  font-weight: 500;
-  margin: 0;
+export const ViewCountPublished = styled(ChannelName)`
   margin-top: 8px;
 `
 export const Dot = styled.span`
   font-weight: 800;
   margin: 0px 5px;
+`
+export const MobileView = styled.p`
+  display: none;
+  @media screen and (max-width: 576px) {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+  }
 `

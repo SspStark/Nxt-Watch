@@ -53,6 +53,9 @@ export const VideosContainer = styled.ul`
   @media (max-width: 767px) {
     padding: 5px 15px;
   }
+  @media (max-width: 576px) {
+    padding: 0px;
+  }
 `
 
 export const LoaderContainer = styled.div`

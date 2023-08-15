@@ -48,7 +48,6 @@ export const VideosContainer = styled.ul`
   list-style-type: none;
   padding-left: 0px;
   @media (max-width: 576px) {
-    width: 95%;
     align-self: center;
   }
 `
@@ -75,6 +74,10 @@ export const VideoImage = styled.img`
 export const VideoDetails = styled.div`
   display: flex;
   margin-top: 10px;
+  @media (max-width: 576px) {
+    justify-content: center;
+    margin: 10px;
+  }
 `
 export const ChannelLogo = styled.img`
   width: 30px;
@@ -98,6 +101,9 @@ export const ChannelName = styled.p`
   font-size: 13px;
   font-weight: 500;
   margin: 0;
+  @media (max-width: 576px) {
+    display: none;
+  }
 `
 export const ViewCountPublished = styled(ChannelName)`
   margin-top: 8px;
@@ -105,4 +111,14 @@ export const ViewCountPublished = styled(ChannelName)`
 export const Dot = styled.span`
   font-weight: 800;
   margin: 0px 5px;
+`
+export const MobileView = styled.p`
+  display: none;
+  @media screen and (max-width: 576px) {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+  }
 `

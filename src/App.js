@@ -16,14 +16,11 @@ import './App.css'
 class App extends Component {
   state = {
     isThemeLight: true,
-    activePage: 'Home',
     savedVideos: [],
   }
 
   toggleTheme = () =>
     this.setState(prevState => ({isThemeLight: !prevState.isThemeLight}))
-
-  changeActivePage = page => this.setState({activePage: page})
 
   toggleSave = video => {
     const {savedVideos} = this.state
@@ -39,14 +36,12 @@ class App extends Component {
   }
 
   render() {
-    const {isThemeLight, activePage, savedVideos} = this.state
+    const {isThemeLight, savedVideos} = this.state
     return (
       <NxtWatchContext.Provider
         value={{
           isThemeLight,
           toggleTheme: this.toggleTheme,
-          activePage,
-          changeActivePage: this.changeActivePage,
           savedVideos,
           toggleSave: this.toggleSave,
         }}

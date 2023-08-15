@@ -40,7 +40,7 @@ import {
 const Header = props => (
   <NxtWatchContext.Consumer>
     {value => {
-      const {isThemeLight, toggleTheme, activePage, changeActivePage} = value
+      const {isThemeLight, toggleTheme} = value
 
       const logout = () => {
         const {history} = props
@@ -48,10 +48,12 @@ const Header = props => (
         history.replace('/login')
       }
 
+      const {location} = props
+      const path = location.pathname
+
       const activePageColor = isThemeLight ? '#e2e8f0' : '#424242'
       const activeOptionColor = isThemeLight ? '#000000' : '#ffffff'
       const optionColor = isThemeLight ? '#64748b' : '#e2e8f0'
-
       return (
         <Navbar theme={isThemeLight}>
           <NavContent>
@@ -93,21 +95,14 @@ const Header = props => (
                     <SidebarOptions>
                       <MenuLink to="/">
                         <MenuItem
-                          bgColor={
-                            activePage === 'Home' ? activePageColor : 'none'
-                          }
-                          onClick={() => changeActivePage('Home')}
+                          bgColor={path === '/' ? activePageColor : 'none'}
                         >
                           <AiFillHome
-                            color={
-                              activePage === 'Home' ? '#ff0000' : '#64748b'
-                            }
+                            color={path === '/' ? '#ff0000' : '#64748b'}
                           />
                           <OptionName
                             textColor={
-                              activePage === 'Home'
-                                ? activeOptionColor
-                                : optionColor
+                              path === '/' ? activeOptionColor : optionColor
                             }
                           >
                             Home
@@ -117,18 +112,15 @@ const Header = props => (
                       <MenuLink to="/trending">
                         <MenuItem
                           bgColor={
-                            activePage === 'Trending' ? activePageColor : 'none'
+                            path === '/trending' ? activePageColor : 'none'
                           }
-                          onClick={() => changeActivePage('Trending')}
                         >
                           <HiFire
-                            color={
-                              activePage === 'Trending' ? '#ff0000' : '#64748b'
-                            }
+                            color={path === '/trending' ? '#ff0000' : '#64748b'}
                           />
                           <OptionName
                             textColor={
-                              activePage === 'Trending'
+                              path === '/trending'
                                 ? activeOptionColor
                                 : optionColor
                             }
@@ -140,18 +132,15 @@ const Header = props => (
                       <MenuLink to="/gaming">
                         <MenuItem
                           bgColor={
-                            activePage === 'Gaming' ? activePageColor : 'none'
+                            path === '/gaming' ? activePageColor : 'none'
                           }
-                          onClick={() => changeActivePage('Gaming')}
                         >
                           <SiYoutubegaming
-                            color={
-                              activePage === 'Gaming' ? '#ff0000' : '#64748b'
-                            }
+                            color={path === '/gaming' ? '#ff0000' : '#64748b'}
                           />
                           <OptionName
                             textColor={
-                              activePage === 'Gaming'
+                              path === '/gaming'
                                 ? activeOptionColor
                                 : optionColor
                             }
@@ -163,18 +152,17 @@ const Header = props => (
                       <MenuLink to="/saved-videos">
                         <MenuItem
                           bgColor={
-                            activePage === 'Saved' ? activePageColor : 'none'
+                            path === '/saved-videos' ? activePageColor : 'none'
                           }
-                          onClick={() => changeActivePage('Saved')}
                         >
                           <MdPlaylistAdd
                             color={
-                              activePage === 'Saved' ? '#ff0000' : '#64748b'
+                              path === '/saved-videos' ? '#ff0000' : '#64748b'
                             }
                           />
                           <OptionName
                             textColor={
-                              activePage === 'Saved'
+                              path === '/saved-videos'
                                 ? activeOptionColor
                                 : optionColor
                             }

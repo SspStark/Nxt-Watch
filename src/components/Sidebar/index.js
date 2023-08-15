@@ -1,4 +1,5 @@
 import {AiFillHome} from 'react-icons/ai'
+import {withRouter} from 'react-router-dom'
 import {HiFire} from 'react-icons/hi'
 import {SiYoutubegaming} from 'react-icons/si'
 import {MdPlaylistAdd} from 'react-icons/md'
@@ -18,10 +19,12 @@ import {
   ContactsCaption,
 } from './styledComponents'
 
-const Sidebar = () => (
+const Sidebar = props => (
   <NxtWatchContext.Consumer>
     {value => {
-      const {isThemeLight, activePage, changeActivePage} = value
+      const {isThemeLight} = value
+
+      const {location} = props
 
       const activePageColor = isThemeLight ? '#e2e8f0' : '#424242'
       const activeOptionColor = isThemeLight ? '#000000' : '#ffffff'
@@ -32,15 +35,14 @@ const Sidebar = () => (
           <SidebarOptions>
             <MenuLink to="/">
               <MenuItem
-                bgColor={activePage === 'Home' ? activePageColor : 'none'}
-                onClick={() => changeActivePage('Home')}
+                bgColor={location.pathname === '/' ? activePageColor : 'none'}
               >
                 <AiFillHome
-                  color={activePage === 'Home' ? '#ff0000' : '#64748b'}
+                  color={location.pathname === '/' ? '#ff0000' : '#64748b'}
                 />
                 <OptionName
                   textColor={
-                    activePage === 'Home' ? activeOptionColor : optionColor
+                    location.pathname === '/' ? activeOptionColor : optionColor
                   }
                 >
                   Home
@@ -49,15 +51,20 @@ const Sidebar = () => (
             </MenuLink>
             <MenuLink to="/trending">
               <MenuItem
-                bgColor={activePage === 'Trending' ? activePageColor : 'none'}
-                onClick={() => changeActivePage('Trending')}
+                bgColor={
+                  location.pathname === '/trending' ? activePageColor : 'none'
+                }
               >
                 <HiFire
-                  color={activePage === 'Trending' ? '#ff0000' : '#64748b'}
+                  color={
+                    location.pathname === '/trending' ? '#ff0000' : '#64748b'
+                  }
                 />
                 <OptionName
                   textColor={
-                    activePage === 'Trending' ? activeOptionColor : optionColor
+                    location.pathname === '/trending'
+                      ? activeOptionColor
+                      : optionColor
                   }
                 >
                   Trending
@@ -66,15 +73,20 @@ const Sidebar = () => (
             </MenuLink>
             <MenuLink to="/gaming">
               <MenuItem
-                bgColor={activePage === 'Gaming' ? activePageColor : 'none'}
-                onClick={() => changeActivePage('Gaming')}
+                bgColor={
+                  location.pathname === '/gaming' ? activePageColor : 'none'
+                }
               >
                 <SiYoutubegaming
-                  color={activePage === 'Gaming' ? '#ff0000' : '#64748b'}
+                  color={
+                    location.pathname === '/gaming' ? '#ff0000' : '#64748b'
+                  }
                 />
                 <OptionName
                   textColor={
-                    activePage === 'Gaming' ? activeOptionColor : optionColor
+                    location.pathname === '/gaming'
+                      ? activeOptionColor
+                      : optionColor
                   }
                 >
                   Gaming
@@ -83,15 +95,24 @@ const Sidebar = () => (
             </MenuLink>
             <MenuLink to="/saved-videos">
               <MenuItem
-                bgColor={activePage === 'Saved' ? activePageColor : 'none'}
-                onClick={() => changeActivePage('Saved')}
+                bgColor={
+                  location.pathname === '/saved-videos'
+                    ? activePageColor
+                    : 'none'
+                }
               >
                 <MdPlaylistAdd
-                  color={activePage === 'Saved' ? '#ff0000' : '#64748b'}
+                  color={
+                    location.pathname === '/saved-videos'
+                      ? '#ff0000'
+                      : '#64748b'
+                  }
                 />
                 <OptionName
                   textColor={
-                    activePage === 'Saved' ? activeOptionColor : optionColor
+                    location.pathname === '/saved-videos'
+                      ? activeOptionColor
+                      : optionColor
                   }
                 >
                   Saved Videos
@@ -125,4 +146,4 @@ const Sidebar = () => (
   </NxtWatchContext.Consumer>
 )
 
-export default Sidebar
+export default withRouter(Sidebar)

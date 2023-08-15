@@ -24,7 +24,7 @@ export const VideoPlayer = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 20px;
-  @media (max-width: 767px) {
+  @media (max-width: 576px) {
     padding: 20px 0px;
   }
 `
@@ -92,8 +92,12 @@ export const ButtonText = styled.p`
   margin-left: 5px;
 `
 export const HrLine = styled.hr`
-  border: 1px solid #64748b;
+  border: 1px solid #cccccc;
   width: 100%;
+  @media (max-width: 576px) {
+    width: 95%;
+    align-self: center;
+  }
 `
 export const VideoDetails = styled.div`
   display: flex;
@@ -130,6 +134,7 @@ export const ChannelDescription = styled.p`
   margin-left: 50px;
   @media (max-width: 576px) {
     margin-left: 10px;
+    margin-right: 10px;
   }
 `
 export const ButtonCard = styled.div`
