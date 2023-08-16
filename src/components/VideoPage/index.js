@@ -28,7 +28,6 @@ import {
   ChannelName,
   ChannelSubscribers,
   ChannelDescription,
-  ButtonCard,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -139,36 +138,30 @@ class VideoPage extends Component {
                 {videoData.publishedAt}
               </ViewsAndDate>
               <LikeAndSave>
-                <ButtonCard>
-                  <Button
-                    type="button"
-                    onClick={this.like}
-                    textColor={colorLiked}
-                  >
-                    <AiOutlineLike size={25} />
-                    Like
-                  </Button>
-                </ButtonCard>
-                <ButtonCard>
-                  <Button
-                    type="button"
-                    onClick={this.dislike}
-                    textColor={colorDisliked}
-                  >
-                    <AiOutlineDislike size={22} />
-                    Dislike
-                  </Button>
-                </ButtonCard>
-                <ButtonCard>
-                  <Button
-                    type="button"
-                    textColor={colorSaved}
-                    onClick={onClickSave}
-                  >
-                    <MdPlaylistAdd size={22} />
-                    <ButtonText>{videoSaved ? 'Saved' : 'Save'}</ButtonText>
-                  </Button>
-                </ButtonCard>
+                <Button
+                  type="button"
+                  onClick={this.like}
+                  textColor={colorLiked}
+                >
+                  <AiOutlineLike size={25} />
+                  Like
+                </Button>
+                <Button
+                  type="button"
+                  onClick={this.dislike}
+                  textColor={colorDisliked}
+                >
+                  <AiOutlineDislike size={22} />
+                  Dislike
+                </Button>
+                <Button
+                  type="button"
+                  textColor={colorSaved}
+                  onClick={onClickSave}
+                >
+                  <MdPlaylistAdd size={22} />
+                  <ButtonText>{videoSaved ? 'Saved' : 'Save'}</ButtonText>
+                </Button>
               </LikeAndSave>
             </VideoStats>
             <HrLine />

@@ -25,9 +25,7 @@ export const BannerContainer = styled.div`
     padding: 20px;
   }
 `
-export const BannerDetails = styled.div`
-  width: 50%;
-`
+export const BannerDetails = styled.div``
 export const BannerLogo = styled.img`
   width: 130px;
   @media (max-width: 767px) {
@@ -57,15 +55,12 @@ export const BannerButton = styled.button`
     margin-top: 12px;
   }
 `
-export const BannerCloseButton = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`
-
 export const BannerClose = styled.button`
   border: none;
   background: none;
-  height: 25px;
+  outline: none;
+  cursor: pointer;
+  align-self: flex-start;
 `
 export const HomeContainer = styled.div`
   display: flex;

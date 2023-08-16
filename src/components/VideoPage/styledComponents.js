@@ -137,7 +137,3 @@ export const ChannelDescription = styled.p`
     margin-right: 10px;
   }
 `
-export const ButtonCard = styled.div`
-  display: flex;
-  background: none;
-`

@@ -21,7 +21,6 @@ import {
   SearchInput,
   SearchButton,
   LoaderContainer,
-  BannerCloseButton,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -131,15 +130,13 @@ class Home extends Component {
                     </BannerText>
                     <BannerButton type="button">GET IT NOW</BannerButton>
                   </BannerDetails>
-                  <BannerCloseButton>
-                    <BannerClose
-                      type="button"
-                      data-testid="close"
-                      onClick={this.closeBanner}
-                    >
-                      <AiOutlineClose size={25} />
-                    </BannerClose>
-                  </BannerCloseButton>
+                  <BannerClose
+                    type="button"
+                    data-testid="close"
+                    onClick={this.closeBanner}
+                  >
+                    <AiOutlineClose size={18} />
+                  </BannerClose>
                 </BannerContainer>
               )}
               <HomeContainer>

@@ -92,7 +92,7 @@ const Header = props => (
                     <TabsClose type="button" onClick={() => close()}>
                       <AiOutlineClose size={16} />
                     </TabsClose>
-                    <SidebarOptions>
+                    <SidebarOptions onClick={() => close()}>
                       <MenuLink to="/">
                         <MenuItem
                           bgColor={path === '/' ? activePageColor : 'none'}
