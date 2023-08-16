@@ -37,6 +37,7 @@ class App extends Component {
 
   render() {
     const {isThemeLight, savedVideos} = this.state
+    document.title = 'Nxt Watch'
     return (
       <NxtWatchContext.Provider
         value={{
