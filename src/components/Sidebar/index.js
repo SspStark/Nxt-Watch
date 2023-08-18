@@ -123,18 +123,36 @@ const Sidebar = props => (
           <ContactSection>
             <ContactHeading theme={isThemeLight}>CONTACT US</ContactHeading>
             <ContactLogos>
-              <Contact
-                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png"
-                alt="facebook logo"
-              />
-              <Contact
-                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-twitter-logo-img.png"
-                alt="twitter logo"
-              />
-              <Contact
-                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-linked-in-logo-img.png"
-                alt="linked in logo"
-              />
+              <a
+                href="https://www.facebook.com/sspchowdary.sspchowdary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Contact
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png"
+                  alt="facebook logo"
+                />
+              </a>
+              <a
+                href="https://twitter.com/ssp_stark"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Contact
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-twitter-logo-img.png"
+                  alt="twitter logo"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sspstark/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Contact
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-linked-in-logo-img.png"
+                  alt="linked in logo"
+                />
+              </a>
             </ContactLogos>
             <ContactsCaption theme={isThemeLight}>
               Enjoy! Now to see your channels and recommendations!
