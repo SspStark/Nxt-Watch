@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build"
+  command = "NODE_OPTIONS=--openssl-legacy-provider pnpm run build"
   publish = "build"
 
 [build.environment]
-  NODE_VERSION = "14"
-  NPM_FLAGS = "--legacy-peer-deps"
+  NODE_VERSION = "18"
+
